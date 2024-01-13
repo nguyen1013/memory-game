@@ -1,0 +1,202 @@
+/*
+-1-GENERAL
+-2-INPUT
+-3-RESULT DISPLAY
+-4-GAMEBOARD
+-5-UTILITIES
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* -1-GENERAL */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  color: yellow;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.6;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #2B4854;
+}
+
+#title {
+  height: 2.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* -2-INPUT */
+#input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+#input h2 {
+  margin-right: 10px;
+}
+
+#select-game {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BUTTON STYLE */
+.input__btn {
+  margin: 5px;
+  color: #54412B;
+  height: 50px;
+  width: 180px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: hsl(50, 80%, 50%);
+  border: 2px solid hsl(50, 80%, 40%);
+  border-radius: 5px;
+}
+
+.input__btn:hover {
+  background-color: hsl(60, 100%, 40%);
+  transition: background-color .1s, font-size .1s;
+  font-size: 1.1rem;
+}
+
+.input__btn:active {
+  background-color: hsl(60, 80%, 50%);
+  border-color: hsl(60, 100%, 50%);
+}
+
+#restart {
+  background-color: hsl(199, 34%, 74%);
+  border: 2px solid hsl(199, 34%, 64%);
+  color: #54412B;
+}
+
+/* -3-RESULT DISPLAY */
+.results {
+  height: 2.5rem;
+  width: 95%;
+}
+
+#alert {
+  height: 60%;
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+#record {  
+  height: 40%;
+  text-align: right;
+}
+
+/* -4-GAMEBOARD */ 
+.main {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;  
+}
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.card-container{
+  width: 120px;
+  height: 165px;
+  margin: 5px;
+}
+  
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.card-box,
+.active {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  /* border: 1px darkcyan solid; */
+  /* border-radius: .5rem; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+
+/* THE TOGGLE CLASS CONTROLS THE FLIP ON CLICK EVENT */
+.active {
+  transform: rotateY(180deg);
+}
+
+.card-box img {
+  width: 100%;
+  height: auto;  
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.back {
+  transform: rotateY(180deg);
+}
+
+
+/* -5-UTILITIES */ 
+@media screen and (max-width: 850px) {
+  #title {
+    height: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  #select-game {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .input__btn {
+    height: 50px;
+    width: 100px;
+  }
+
+  .card-container{
+    width: 90px;
+    height: 124px;
+    margin: 5px;
+  }
+}

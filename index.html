@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1 id="title">Memory game</h1>
+
+  <div id="input">
+    <h2>Select a game</h2>
+    <div id="select-game">
+      <input type="button" value="8 Cards" class="input__btn" id="game8">
+      <input type="button" value="16 Cards" class="input__btn" id="game16">
+      <input type="button" value="32 Cards" class="input__btn" id="game32">
+      <input type="button" value="40 Cards" class="input__btn" id="game40">      
+    </div>
+    <input type="button" class="input__btn" id="restart" value="Restart">
+  </div>
+
+  <div class="main">
+    <div class="results">
+      <div id="alert">
+        <h2></h2>     
+      </div>
+      <div id="record">
+        <h3></h3>
+      </div>
+    </div>
+    <div id="gameboard">
+      <!-- <div class="card-container">
+        <div class="card-box" id="box0">
+          <div class="front">
+            <img src="./img/joker.png" alt="1" class="0">
+          </div>
+          <div class="back">
+            <img src="./img/joker.png" alt="1" class="0" id="0">1
+          </div>        
+        </div>  
+      </div> -->
+    </div>   
+  </div>
+
+</section>
+<script src="main.js"></script>
+
+</body>
+</html>
