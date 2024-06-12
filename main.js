@@ -57,7 +57,7 @@ function createGameboard(num) {
   gameboard.innerHTML = '';
   let temp = '';
   for (let i = 0; i < num; i++) {
-    let id = document.getElementById(`${i}`);
+    //let id = document.getElementById(`${i}`);
     temp += `
       <div class="card-container">
         <div class="card-box" id="box${i}">
